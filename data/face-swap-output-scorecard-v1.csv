@@ -1,0 +1,8 @@
+evaluationId,mediaType,sampleId,reviewer,reviewedAt,criterionId,criterion,weight,applicableMediaTypes,reviewQuestion,score0to4,notes
+,,,,,identity-preservation,Identity preservation,24,photo|video|gif,"Do the visible eyes, brows, nose, mouth, jaw, age cues, and overall identity remain coherent with the intended reference?",,
+,,,,,boundary-blend,Face boundary and blend,16,photo|video|gif,"Do skin texture, face edges, ears, jaw, hairline, and neck transition into the target scene without a pasted-on boundary?",,
+,,,,,pose-expression,Pose and expression coherence,14,photo|video|gif,"Does facial geometry remain coherent with the target head angle, gaze, eye state, mouth shape, and expression?",,
+,,,,,lighting-color,Lighting and color continuity,14,photo|video|gif,"Do exposure, color, skin shading, highlights, and shadows remain consistent with the target scene?",,
+,,,,,occlusion-accessories,Occlusion and accessory continuity,12,photo|video|gif,"Do hair, hands, glasses, masks, microphones, foreground objects, and other occlusions stay in the correct visual order?",,
+,,,,,technical-integrity,Technical integrity,10,photo|video|gif,"Is the output free from material blur, ringing, block artifacts, tearing, duplicate features, abrupt texture changes, or damaged frames?",,
+,,,,,temporal-stability,Temporal stability,10,video|gif,"Across motion, does identity remain stable without flicker, drift, face loss, sudden geometry changes, or a visible loop seam?",,

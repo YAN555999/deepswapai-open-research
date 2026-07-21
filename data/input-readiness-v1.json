@@ -1,0 +1,162 @@
+{
+  "schemaVersion": "1.0",
+  "id": "deepswapai-input-readiness-benchmark-v1",
+  "identifier": "deepswapai-input-readiness-benchmark-v1",
+  "version": "1.0.0",
+  "title": "DeepSwapAI controlled image input-readiness benchmark",
+  "alternateName": "DeepSwapAI face swap input readiness dataset",
+  "description": "A reproducible input-only image benchmark measuring resolution, luminance, contrast, clipping, and edge detail across six controlled variants without claiming face swap output quality.",
+  "datePublished": "2026-07-18",
+  "dateModified": "2026-07-22",
+  "canonicalUrl": "https://deepswapai.com/research",
+  "creator": "DeepSwapAI Product Team",
+  "isAccessibleForFree": true,
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "DeepSwapAI Controlled Image Input-Readiness Benchmark v1, https://deepswapai.com/research",
+  "dataCatalogUrl": "https://deepswapai.com/research#catalog",
+  "citationFileUrl": "https://deepswapai.com/assets/readiness-benchmark/input-readiness-v1.bib",
+  "rights": "The JSON and CSV data, transformations, formulas, and measurement metadata are licensed under CC BY 4.0. Referenced sample images remain DeepSwapAI-owned and are provided for benchmark verification; they are not relicensed for unrelated reuse.",
+  "source": {
+    "url": "/assets/hero-western-model.png",
+    "sha256": "2f293e48f7d5d6a08ce9ab759a124e00ce92f2a204cd530284ce7d1f0ecc7c3d",
+    "rights": "DeepSwapAI-owned product creative used as a controlled input source."
+  },
+  "analyzer": {
+    "id": "ds-image-readiness-v1",
+    "sampleMaxSidePixels": 512,
+    "luminance": "Rec. 709 luma: 0.2126R + 0.7152G + 0.0722B after compositing transparency over white.",
+    "contrast": "Population standard deviation of sampled luminance.",
+    "darkClipping": "Percentage of sampled pixels with luminance less than or equal to 10.",
+    "highlightClipping": "Percentage of sampled pixels with luminance greater than or equal to 245.",
+    "edgeDetail": "Mean absolute luminance difference across every horizontal and vertical adjacent-pixel pair."
+  },
+  "scope": "Input-image measurements only. No face swap generation was run for this dataset.",
+  "limitations": [
+    "The dataset uses one owned source scene and controlled variants; it is not representative of every face, camera, or lighting condition.",
+    "The measurements do not detect a face, identity, consent, pose, expression, occlusion, hair, or gaze.",
+    "The measurements do not predict output realism, identity similarity, model accuracy, processing success, or preference.",
+    "Compression and resizing can change measurements across browser decoders by small amounts."
+  ],
+  "samples": [
+    {
+      "id": "reference",
+      "label": "Reference encode",
+      "file": "reference.webp",
+      "url": "/assets/readiness-benchmark/reference.webp",
+      "transformation": "Resize the owned source to 960 x 540 and encode as WebP at quality 82.",
+      "width": 960,
+      "height": 540,
+      "analyzedWidth": 512,
+      "analyzedHeight": 288,
+      "bytes": 79712,
+      "sha256": "8c852071b02e03d91eb264655fef14654026fa46dc32e736a2b25c2ab0a1186a",
+      "metrics": {
+        "meanLuminance": 125.82,
+        "contrastStandardDeviation": 58.95,
+        "darkClippingPercent": 1.22,
+        "highlightClippingPercent": 0,
+        "adjacentEdgeDifference": 7.74
+      }
+    },
+    {
+      "id": "low-resolution",
+      "label": "Reduced resolution",
+      "file": "low-resolution.webp",
+      "url": "/assets/readiness-benchmark/low-resolution.webp",
+      "transformation": "Resize the same source to 320 x 180 and encode as WebP at quality 82.",
+      "width": 320,
+      "height": 180,
+      "analyzedWidth": 320,
+      "analyzedHeight": 180,
+      "bytes": 15358,
+      "sha256": "955c0e4e97a7af8564b39733b9654d3294abd07fa014c530ca733d8708000cc0",
+      "metrics": {
+        "meanLuminance": 126.22,
+        "contrastStandardDeviation": 58.81,
+        "darkClippingPercent": 1.1,
+        "highlightClippingPercent": 0.01,
+        "adjacentEdgeDifference": 10.55
+      }
+    },
+    {
+      "id": "soft-focus",
+      "label": "Soft focus",
+      "file": "soft-focus.webp",
+      "url": "/assets/readiness-benchmark/soft-focus.webp",
+      "transformation": "Resize to 960 x 540, apply a Gaussian blur with sigma 4.5, and encode as WebP at quality 82.",
+      "width": 960,
+      "height": 540,
+      "analyzedWidth": 512,
+      "analyzedHeight": 288,
+      "bytes": 23616,
+      "sha256": "e8edf51e0ef2b38916c858fe4aff932b14081d60ebd55552fbfc360586350886",
+      "metrics": {
+        "meanLuminance": 124.8,
+        "contrastStandardDeviation": 55.19,
+        "darkClippingPercent": 0.16,
+        "highlightClippingPercent": 0,
+        "adjacentEdgeDifference": 2.68
+      }
+    },
+    {
+      "id": "low-exposure",
+      "label": "Low exposure",
+      "file": "low-exposure.webp",
+      "url": "/assets/readiness-benchmark/low-exposure.webp",
+      "transformation": "Resize to 960 x 540, apply y = 0.52x - 8 to RGB channels, clamp to 8-bit range, and encode as WebP at quality 82.",
+      "width": 960,
+      "height": 540,
+      "analyzedWidth": 512,
+      "analyzedHeight": 288,
+      "bytes": 46112,
+      "sha256": "727172796e3cf8efdefd601d21177321c1bfcfbc458d629a689897aecf442769",
+      "metrics": {
+        "meanLuminance": 57.18,
+        "contrastStandardDeviation": 30.37,
+        "darkClippingPercent": 9.22,
+        "highlightClippingPercent": 0,
+        "adjacentEdgeDifference": 3.87
+      }
+    },
+    {
+      "id": "high-exposure",
+      "label": "High exposure",
+      "file": "high-exposure.webp",
+      "url": "/assets/readiness-benchmark/high-exposure.webp",
+      "transformation": "Resize to 960 x 540, apply y = 1.35x + 45 to RGB channels, clamp to 8-bit range, and encode as WebP at quality 82.",
+      "width": 960,
+      "height": 540,
+      "analyzedWidth": 512,
+      "analyzedHeight": 288,
+      "bytes": 85670,
+      "sha256": "f2b01d592108fea3bb82e888733d89fb7356c307cda00d6d55d587b422da957b",
+      "metrics": {
+        "meanLuminance": 197.15,
+        "contrastStandardDeviation": 62.53,
+        "darkClippingPercent": 0,
+        "highlightClippingPercent": 36.64,
+        "adjacentEdgeDifference": 8.41
+      }
+    },
+    {
+      "id": "jpeg-compression",
+      "label": "Heavy JPEG compression",
+      "file": "jpeg-compression.jpg",
+      "url": "/assets/readiness-benchmark/jpeg-compression.jpg",
+      "transformation": "Resize to 960 x 540 and encode as JPEG at quality 15 with 4:2:0 chroma subsampling.",
+      "width": 960,
+      "height": 540,
+      "analyzedWidth": 512,
+      "analyzedHeight": 288,
+      "bytes": 16637,
+      "sha256": "cd952c4c50fb78e941a62492e7ef6c3cc2fae96abac7df87aa1f32d4106b97ae",
+      "metrics": {
+        "meanLuminance": 125.58,
+        "contrastStandardDeviation": 58.95,
+        "darkClippingPercent": 1.29,
+        "highlightClippingPercent": 0.01,
+        "adjacentEdgeDifference": 7.45
+      }
+    }
+  ]
+}

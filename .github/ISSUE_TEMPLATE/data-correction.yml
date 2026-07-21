@@ -1,0 +1,45 @@
+name: Data correction
+description: Report a reproducible correction to a published data or metadata field.
+title: "[Data correction] "
+labels:
+  - data-correction
+body:
+  - type: input
+    id: file
+    attributes:
+      label: Affected file
+      placeholder: data/input-readiness-v1.json
+    validations:
+      required: true
+  - type: input
+    id: field
+    attributes:
+      label: Field or row
+      placeholder: samples[2].metrics.meanLuminance
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current value and issue
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed correction
+    validations:
+      required: true
+  - type: input
+    id: evidence
+    attributes:
+      label: Primary evidence or reproduction URL
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I have not attached customer media, personal data, credentials, or private production logs.
+          required: true

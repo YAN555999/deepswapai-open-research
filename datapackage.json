@@ -1,0 +1,73 @@
+{
+  "profile": "data-package",
+  "name": "deepswapai-face-swap-research-catalog",
+  "title": "DeepSwapAI Face Swap Research Data Catalog",
+  "id": "https://deepswapai.com/research#catalog",
+  "version": "1.0.0",
+  "homepage": "https://deepswapai.com/research#catalog",
+  "repository": "https://github.com/YAN555999/deepswapai-open-research",
+  "created": "2026-07-22",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/",
+      "title": "Creative Commons Attribution 4.0 International"
+    }
+  ],
+  "resources": [
+    {
+      "name": "input-readiness-v1",
+      "path": "data/input-readiness-v1.json",
+      "profile": "data-resource",
+      "format": "json",
+      "mediatype": "application/json",
+      "bytes": 6987,
+      "hash": "sha256:2dd134cfc8c201cdc2e521b59f72491dd6f7d6bacd3de7d80026d2a5f0099fc4"
+    },
+    {
+      "name": "input-readiness-v1",
+      "path": "data/input-readiness-v1.csv",
+      "profile": "data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "bytes": 1708,
+      "hash": "sha256:9b6564f67d132f7a91b27b49181b441acf097fdfd7b7d421b9960943c10b0997"
+    },
+    {
+      "name": "input-readiness-v1",
+      "path": "data/input-readiness-v1.bib",
+      "profile": "data-resource",
+      "format": "bib",
+      "mediatype": "application/x-bibtex",
+      "bytes": 366,
+      "hash": "sha256:3ad3595e176983af425a63859b905eb76a134a776a7723198b0556d1f9a6c883"
+    },
+    {
+      "name": "face-swap-output-scorecard-v1",
+      "path": "data/face-swap-output-scorecard-v1.json",
+      "profile": "data-resource",
+      "format": "json",
+      "mediatype": "application/json",
+      "bytes": 8980,
+      "hash": "sha256:7f94130f79bbf32bf14d42387d0bb52a1a494b3a824cbb54065cdaff9514bc16"
+    },
+    {
+      "name": "face-swap-output-scorecard-v1",
+      "path": "data/face-swap-output-scorecard-v1.csv",
+      "profile": "data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "bytes": 1470,
+      "hash": "sha256:903a6beac4c61679d1c3df197a2505af60e83f2f2280776df52b4d2c581f2a14"
+    },
+    {
+      "name": "face-swap-output-scorecard-v1",
+      "path": "data/face-swap-output-scorecard-v1.bib",
+      "profile": "data-resource",
+      "format": "bib",
+      "mediatype": "application/x-bibtex",
+      "bytes": 389,
+      "hash": "sha256:ff49328c015ecf5f43df1d1ddeaa47f27da463373280e023e92e39439767c6f9"
+    }
+  ]
+}

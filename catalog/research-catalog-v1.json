@@ -1,0 +1,110 @@
+{
+  "@context": "https://schema.org",
+  "@type": "DataCatalog",
+  "@id": "https://deepswapai.com/research#catalog",
+  "name": "DeepSwapAI face swap research data catalog",
+  "description": "Versioned input-readiness measurements and a separate structured output-review protocol with explicit evidence boundaries.",
+  "url": "https://deepswapai.com/research#catalog",
+  "sameAs": "https://github.com/YAN555999/deepswapai-open-research",
+  "version": "1.0.0",
+  "datePublished": "2026-07-22",
+  "dateModified": "2026-07-22",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isAccessibleForFree": true,
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://deepswapai.com/#organization",
+    "name": "DeepSwapAI",
+    "url": "https://deepswapai.com/"
+  },
+  "dataset": [
+    {
+      "@type": "Dataset",
+      "@id": "https://deepswapai.com/research#dataset",
+      "identifier": "deepswapai-input-readiness-benchmark-v1",
+      "name": "DeepSwapAI controlled image input-readiness benchmark",
+      "alternateName": "DeepSwapAI face swap input readiness dataset",
+      "description": "A reproducible input-only image benchmark measuring resolution, luminance, contrast, clipping, and edge detail across six controlled variants without claiming face swap output quality.",
+      "version": "1.0.0",
+      "datePublished": "2026-07-18",
+      "dateModified": "2026-07-22",
+      "url": "https://deepswapai.com/research",
+      "sameAs": "https://github.com/YAN555999/deepswapai-open-research/blob/main/data/input-readiness-v1.json",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "isAccessibleForFree": true,
+      "includedInDataCatalog": {
+        "@id": "https://deepswapai.com/research#catalog"
+      },
+      "creator": {
+        "@id": "https://deepswapai.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://deepswapai.com/#organization"
+      },
+      "citation": "https://deepswapai.com/assets/readiness-benchmark/input-readiness-v1.bib",
+      "abstract": "Input-image measurements only; no face swap output was generated or scored.",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "DeepSwapAI controlled image input-readiness benchmark JSON",
+          "encodingFormat": "application/json",
+          "contentSize": "6987 bytes",
+          "contentUrl": "https://deepswapai.com/assets/readiness-benchmark/input-readiness-v1.json",
+          "sameAs": "https://github.com/YAN555999/deepswapai-open-research/blob/main/data/input-readiness-v1.json"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "DeepSwapAI controlled image input-readiness benchmark CSV",
+          "encodingFormat": "text/csv",
+          "contentSize": "1708 bytes",
+          "contentUrl": "https://deepswapai.com/assets/readiness-benchmark/input-readiness-v1.csv",
+          "sameAs": "https://github.com/YAN555999/deepswapai-open-research/blob/main/data/input-readiness-v1.csv"
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://deepswapai.com/face-swap-quality-scorecard#dataset",
+      "identifier": "deepswapai-face-swap-output-scorecard-v1",
+      "name": "DeepSwapAI face swap output quality scorecard",
+      "alternateName": "DeepSwapAI face swap human-review rubric",
+      "description": "A transparent human-review rubric for evaluating one photo, video, or GIF face swap output without claiming biometric accuracy or model superiority.",
+      "version": "1.0.0",
+      "datePublished": "2026-07-18",
+      "dateModified": "2026-07-22",
+      "url": "https://deepswapai.com/face-swap-quality-scorecard",
+      "sameAs": "https://github.com/YAN555999/deepswapai-open-research/blob/main/data/face-swap-output-scorecard-v1.json",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "isAccessibleForFree": true,
+      "includedInDataCatalog": {
+        "@id": "https://deepswapai.com/research#catalog"
+      },
+      "creator": {
+        "@id": "https://deepswapai.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://deepswapai.com/#organization"
+      },
+      "citation": "https://deepswapai.com/assets/quality-scorecard/face-swap-output-scorecard-v1.bib",
+      "abstract": "Structured human review of one output; not a biometric identity metric, provider ranking, or success-rate benchmark.",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "DeepSwapAI face swap output quality scorecard JSON",
+          "encodingFormat": "application/json",
+          "contentSize": "8980 bytes",
+          "contentUrl": "https://deepswapai.com/assets/quality-scorecard/face-swap-output-scorecard-v1.json",
+          "sameAs": "https://github.com/YAN555999/deepswapai-open-research/blob/main/data/face-swap-output-scorecard-v1.json"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "DeepSwapAI face swap output quality scorecard CSV",
+          "encodingFormat": "text/csv",
+          "contentSize": "1470 bytes",
+          "contentUrl": "https://deepswapai.com/assets/quality-scorecard/face-swap-output-scorecard-v1.csv",
+          "sameAs": "https://github.com/YAN555999/deepswapai-open-research/blob/main/data/face-swap-output-scorecard-v1.csv"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "schemaVersion": "1.0",
+  "id": "deepswapai-face-swap-output-scorecard-v1",
+  "identifier": "deepswapai-face-swap-output-scorecard-v1",
+  "version": "1.0.0",
+  "title": "DeepSwapAI face swap output quality scorecard",
+  "alternateName": "DeepSwapAI face swap human-review rubric",
+  "description": "A transparent human-review rubric for evaluating one photo, video, or GIF face swap output without claiming biometric accuracy or model superiority.",
+  "canonicalUrl": "https://deepswapai.com/face-swap-quality-scorecard",
+  "datePublished": "2026-07-18",
+  "dateModified": "2026-07-22",
+  "creator": "DeepSwapAI Product Team",
+  "isAccessibleForFree": true,
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "DeepSwapAI Face Swap Output Quality Scorecard v1, https://deepswapai.com/face-swap-quality-scorecard",
+  "dataCatalogUrl": "https://deepswapai.com/research#catalog",
+  "citationFileUrl": "https://deepswapai.com/assets/quality-scorecard/face-swap-output-scorecard-v1.bib",
+  "scope": "Human review of one specific face swap output using visible evidence in the sampled media.",
+  "mediaTypes": [
+    "photo",
+    "video",
+    "gif"
+  ],
+  "ratingScale": [
+    {
+      "value": 0,
+      "label": "Unusable",
+      "definition": "A failure or severe defect prevents the intended use."
+    },
+    {
+      "value": 1,
+      "label": "Major defect",
+      "definition": "A clearly visible defect dominates normal viewing."
+    },
+    {
+      "value": 2,
+      "label": "Noticeable defect",
+      "definition": "A defect remains easy to notice and needs targeted correction."
+    },
+    {
+      "value": 3,
+      "label": "Minor defect",
+      "definition": "A small defect is visible on review but does not dominate normal viewing."
+    },
+    {
+      "value": 4,
+      "label": "No material defect observed",
+      "definition": "No material defect was observed in the sampled output for this criterion."
+    }
+  ],
+  "criticalGates": [
+    {
+      "id": "permission-confirmed",
+      "label": "Permission confirmed",
+      "definition": "The reviewer has confirmed permission from every real person depicted and the intended use is allowed."
+    },
+    {
+      "id": "identity-mapping-verified",
+      "label": "Identity mapping verified",
+      "definition": "The output shows the intended identity on the intended person or target throughout the reviewed sample."
+    },
+    {
+      "id": "disclosure-reviewed",
+      "label": "Disclosure reviewed",
+      "definition": "The reviewer has considered whether the output needs an AI-generated-content disclosure before publication."
+    }
+  ],
+  "criteria": [
+    {
+      "id": "identity-preservation",
+      "label": "Identity preservation",
+      "weight": 24,
+      "mediaTypes": [
+        "photo",
+        "video",
+        "gif"
+      ],
+      "reviewQuestion": "Do the visible eyes, brows, nose, mouth, jaw, age cues, and overall identity remain coherent with the intended reference?",
+      "sampleGuidance": "Review at normal viewing size, then inspect the face during the hardest visible pose or frame."
+    },
+    {
+      "id": "boundary-blend",
+      "label": "Face boundary and blend",
+      "weight": 16,
+      "mediaTypes": [
+        "photo",
+        "video",
+        "gif"
+      ],
+      "reviewQuestion": "Do skin texture, face edges, ears, jaw, hairline, and neck transition into the target scene without a pasted-on boundary?",
+      "sampleGuidance": "Inspect high-contrast edges and the full face perimeter rather than only the center of the face."
+    },
+    {
+      "id": "pose-expression",
+      "label": "Pose and expression coherence",
+      "weight": 14,
+      "mediaTypes": [
+        "photo",
+        "video",
+        "gif"
+      ],
+      "reviewQuestion": "Does facial geometry remain coherent with the target head angle, gaze, eye state, mouth shape, and expression?",
+      "sampleGuidance": "Prioritize profile turns, closed eyes, open mouths, smiles, and steep head tilts."
+    },
+    {
+      "id": "lighting-color",
+      "label": "Lighting and color continuity",
+      "weight": 14,
+      "mediaTypes": [
+        "photo",
+        "video",
+        "gif"
+      ],
+      "reviewQuestion": "Do exposure, color, skin shading, highlights, and shadows remain consistent with the target scene?",
+      "sampleGuidance": "Check directional light, colored light, shadow boundaries, and transitions between bright and dark regions."
+    },
+    {
+      "id": "occlusion-accessories",
+      "label": "Occlusion and accessory continuity",
+      "weight": 12,
+      "mediaTypes": [
+        "photo",
+        "video",
+        "gif"
+      ],
+      "reviewQuestion": "Do hair, hands, glasses, masks, microphones, foreground objects, and other occlusions stay in the correct visual order?",
+      "sampleGuidance": "Review every point where an object crosses the face or where the face moves behind another object."
+    },
+    {
+      "id": "technical-integrity",
+      "label": "Technical integrity",
+      "weight": 10,
+      "mediaTypes": [
+        "photo",
+        "video",
+        "gif"
+      ],
+      "reviewQuestion": "Is the output free from material blur, ringing, block artifacts, tearing, duplicate features, abrupt texture changes, or damaged frames?",
+      "sampleGuidance": "Inspect at the intended delivery size and avoid treating deliberate motion blur or depth of field as a defect by itself."
+    },
+    {
+      "id": "temporal-stability",
+      "label": "Temporal stability",
+      "weight": 10,
+      "mediaTypes": [
+        "video",
+        "gif"
+      ],
+      "reviewQuestion": "Across motion, does identity remain stable without flicker, drift, face loss, sudden geometry changes, or a visible loop seam?",
+      "sampleGuidance": "Review the full clip at normal speed, then replay the hardest turn, occlusion, cut, and loop boundary frame by frame."
+    }
+  ],
+  "calculation": {
+    "formula": "sum((criterionScore / 4) * criterionWeight) / sum(applicableCriterionWeights) * 100",
+    "rounding": "nearest whole number",
+    "photoTemporalHandling": "Temporal stability is excluded from photo scores, so the applicable weight denominator is 90.",
+    "motionDenominator": 100,
+    "photoDenominator": 90,
+    "completionRule": "Every applicable criterion must be rated before a numerical score is shown.",
+    "gateRule": "The numerical score never overrides an unresolved critical gate."
+  },
+  "decisionBands": [
+    {
+      "minimum": 85,
+      "maximum": 100,
+      "label": "Candidate for acceptance",
+      "action": "Complete the critical gates and a final use-specific review before publication."
+    },
+    {
+      "minimum": 70,
+      "maximum": 84,
+      "label": "Targeted review",
+      "action": "Correct or retest the lowest-scoring criteria before publication."
+    },
+    {
+      "minimum": 50,
+      "maximum": 69,
+      "label": "Regenerate or edit",
+      "action": "Change one input or processing variable, then score a new output independently."
+    },
+    {
+      "minimum": 0,
+      "maximum": 49,
+      "label": "Reject this output",
+      "action": "Do not use this output for the intended purpose without a materially different result."
+    }
+  ],
+  "reproducibilityRequirements": [
+    "Use the same permitted source and target media when comparing systems or settings.",
+    "Record media type, sample identifier, reviewer, date, criterion scores, and criterion notes.",
+    "Review motion outputs at normal speed and inspect difficult events frame by frame.",
+    "Use multiple independent outputs and multiple reviewers before making a provider-level claim.",
+    "Report the number of reviewers, samples, runs, viewing conditions, missing ratings, and dispersion rather than publishing one score alone."
+  ],
+  "evidenceBoundary": [
+    "The score is a structured human observation of one reviewed output, not a biometric identity measurement.",
+    "The rubric does not establish model accuracy, average quality, safety, speed, reliability, or provider superiority.",
+    "A high score does not replace consent, disclosure, legal, accessibility, or audience-specific review.",
+    "A cross-provider claim requires the same inputs, repeated runs, independent reviewers, documented viewing conditions, and statistical reporting."
+  ],
+  "references": [
+    {
+      "name": "ITU-R BT.500-15: Methodologies for the subjective assessment of the quality of television images",
+      "url": "https://www.itu.int/rec/R-REC-BT.500-15-202305-I",
+      "relationship": "General principles for documented subjective image assessment; the DeepSwapAI rubric is not an ITU laboratory test."
+    },
+    {
+      "name": "ITU-T P.910 (10/2023): Subjective video quality assessment methods for multimedia applications",
+      "url": "https://www.itu.int/rec/T-REC-P.910/en",
+      "relationship": "General principles for documented subjective multimedia assessment; the DeepSwapAI rubric is a practical single-review workflow."
+    }
+  ]
+}
