@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "id": "deepswapai-open-research-v1.0.0",
-  "version": "1.0.0",
+  "id": "deepswapai-open-research-v1.0.1",
+  "version": "1.0.1",
   "datePublished": "2026-07-22",
   "canonicalCatalog": "https://deepswapai.com/research#catalog",
   "repository": "https://github.com/YAN555999/deepswapai-open-research",
@@ -16,12 +16,12 @@
     {
       "path": "catalog/research-catalog-v1.json",
       "bytes": 5320,
-      "sha256": "50602d8079b18bdab2a61f065dff033d4f380604e83ee55b8fe507652e4f79a3"
+      "sha256": "3855897d54ea9b4f945430ea23213d57ddd6b7e4656bb6090058c56e65e4a9ff"
     },
     {
       "path": "CITATION.cff",
       "bytes": 898,
-      "sha256": "55a37d88bcb3873d5477c5d218b3b1589306aa46473f1b232d332630ebf93711"
+      "sha256": "32f48f4fd2ab77c666398756e8b015ffd8a2ac7b9c36298ee2a8dc9c85aab103"
     },
     {
       "path": "data/face-swap-output-scorecard-v1.bib",
@@ -56,12 +56,12 @@
     {
       "path": "datapackage.json",
       "bytes": 2431,
-      "sha256": "36b220e6025575951ce69bf4a453448a6704a422aeb188d9b593407269bad616"
+      "sha256": "35271a874476c6bb549f8ce6c37720a06ef0cf44145cf580622729f483c5690d"
     },
     {
       "path": "LICENSE",
-      "bytes": 18657,
-      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      "bytes": 18656,
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
     },
     {
       "path": "NOTICE.md",

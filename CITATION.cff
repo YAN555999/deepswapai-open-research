@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: Cite the catalog or the dataset-specific BibTeX record when reusing these materials.
 title: DeepSwapAI Face Swap Research Data Catalog
 type: dataset
-version: 1.0.0
+version: 1.0.1
 date-released: 2026-07-22
 authors:
   - name: DeepSwapAI Product Team
@@ -22,7 +22,7 @@ preferred-citation:
   authors:
     - name: DeepSwapAI Product Team
   year: 2026
-  version: 1.0.0
+  version: 1.0.1
   publisher:
     name: DeepSwapAI
   url: https://deepswapai.com/research#catalog

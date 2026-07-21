@@ -10,7 +10,7 @@ citation metadata, and a public correction history.
 - Canonical catalog: <https://deepswapai.com/research#catalog>
 - Input benchmark: <https://deepswapai.com/research>
 - Output review protocol: <https://deepswapai.com/face-swap-quality-scorecard>
-- Versioned release: <https://github.com/YAN555999/deepswapai-open-research/releases/tag/v1.0.0>
+- Versioned release: <https://github.com/YAN555999/deepswapai-open-research/releases/tag/v1.0.1>
 - License: [CC BY 4.0](LICENSE), subject to [NOTICE.md](NOTICE.md)
 
 ## Included datasets
@@ -53,7 +53,7 @@ stated scope.
 
 Use [CITATION.cff](CITATION.cff), the dataset-specific BibTeX record, or cite:
 
-> DeepSwapAI Product Team (2026). *DeepSwapAI Face Swap Research Data Catalog* (Version 1.0.0). <https://deepswapai.com/research#catalog>
+> DeepSwapAI Product Team (2026). *DeepSwapAI Face Swap Research Data Catalog* (Archive Version 1.0.1). <https://deepswapai.com/research#catalog>
 
 When using one dataset, cite its identifier, version, canonical landing page,
 and the artifact SHA-256 when exact reproduction matters.

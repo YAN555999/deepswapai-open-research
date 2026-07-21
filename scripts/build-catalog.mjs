@@ -8,6 +8,7 @@ const checkOnly = process.argv.includes('--check');
 const repository = 'https://github.com/YAN555999/deepswapai-open-research';
 const catalogId = 'https://deepswapai.com/research#catalog';
 const license = 'https://creativecommons.org/licenses/by/4.0/';
+const archiveVersion = '1.0.1';
 
 const specs = [
   {
@@ -74,7 +75,7 @@ const catalog = {
   description: 'Versioned input-readiness measurements and a separate structured output-review protocol with explicit evidence boundaries.',
   url: catalogId,
   sameAs: repository,
-  version: '1.0.0',
+  version: archiveVersion,
   datePublished: '2026-07-22',
   dateModified: '2026-07-22',
   license,
@@ -177,7 +178,7 @@ const dataPackage = {
   name: 'deepswapai-face-swap-research-catalog',
   title: 'DeepSwapAI Face Swap Research Data Catalog',
   id: catalogId,
-  version: '1.0.0',
+  version: archiveVersion,
   homepage: catalogId,
   repository,
   created: '2026-07-22',
@@ -202,8 +203,8 @@ for (const [relativePath, value] of generated) artifactInputs.set(relativePath, 
 
 const manifest = {
   schemaVersion: '1.0',
-  id: 'deepswapai-open-research-v1.0.0',
-  version: '1.0.0',
+  id: `deepswapai-open-research-v${archiveVersion}`,
+  version: archiveVersion,
   datePublished: '2026-07-22',
   canonicalCatalog: catalogId,
   repository,
@@ -215,11 +216,12 @@ const manifest = {
     sha256: sha256(value),
   })),
 };
+const manifestPath = `manifest-v${archiveVersion}.json`;
 const manifestJson = `${JSON.stringify(manifest, null, 2)}\n`;
-generated.set('manifest-v1.0.0.json', manifestJson);
+generated.set(manifestPath, manifestJson);
 
 const checksumInputs = new Map(artifactInputs);
-checksumInputs.set('manifest-v1.0.0.json', Buffer.from(manifestJson));
+checksumInputs.set(manifestPath, Buffer.from(manifestJson));
 const checksumFile = `${[...checksumInputs.entries()]
   .sort(([a], [b]) => a.localeCompare(b))
   .map(([relativePath, value]) => `${sha256(value)}  ${relativePath}`)
