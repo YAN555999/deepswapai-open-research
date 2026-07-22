@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: Cite the catalog or the dataset-specific BibTeX record when reusing these materials.
 title: DeepSwapAI Face Swap Research Data Catalog
 type: dataset
-version: 1.0.1
+version: 1.1.0
 date-released: 2026-07-22
 authors:
   - name: DeepSwapAI Product Team
@@ -13,16 +13,18 @@ keywords:
   - face swap
   - input readiness
   - output quality rubric
+  - evaluation metrics
+  - benchmarking protocol
   - human review
   - dataset
-abstract: Versioned first-party data and metadata for input-readiness measurement and structured face swap output review, with explicit evidence boundaries.
+abstract: Versioned first-party data and metadata for input-readiness measurement, structured face swap output review, and literature-grounded metric selection, with explicit evidence boundaries.
 preferred-citation:
   type: dataset
   title: DeepSwapAI Face Swap Research Data Catalog
   authors:
     - name: DeepSwapAI Product Team
   year: 2026
-  version: 1.0.1
+  version: 1.1.0
   publisher:
     name: DeepSwapAI
   url: https://deepswapai.com/research#catalog

@@ -1,6 +1,6 @@
 {
   "name": "deepswapai-open-research",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "private": true,
   "description": "Versioned public mirror of the DeepSwapAI face swap research data catalog.",
   "type": "module",

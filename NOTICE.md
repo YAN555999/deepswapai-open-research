@@ -21,3 +21,4 @@ Canonical methods and limitations:
 
 - <https://deepswapai.com/research>
 - <https://deepswapai.com/face-swap-quality-scorecard>
+- <https://deepswapai.com/face-swap-quality-scorecard#automated-benchmark-map>

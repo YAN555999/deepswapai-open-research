@@ -12,7 +12,8 @@ citation metadata, and a public correction history.
 - Canonical catalog CSV: <https://deepswapai.com/research-catalog.csv>
 - Input benchmark: <https://deepswapai.com/research>
 - Output review protocol: <https://deepswapai.com/face-swap-quality-scorecard>
-- Versioned release: <https://github.com/YAN555999/deepswapai-open-research/releases/tag/v1.0.1>
+- Evaluation metric map: <https://deepswapai.com/face-swap-quality-scorecard#automated-benchmark-map>
+- Versioned release: <https://github.com/YAN555999/deepswapai-open-research/releases/tag/v1.1.0>
 - License: [CC BY 4.0](LICENSE), subject to [NOTICE.md](NOTICE.md)
 
 ## Included datasets
@@ -21,6 +22,7 @@ citation metadata, and a public correction history.
 | --- | --- | --- | --- |
 | Controlled Image Input-Readiness Benchmark v1 | Six controlled input variants and decoded-pixel measurements; no face swap output was generated or scored | [Method, data, and limitations](https://deepswapai.com/research) | [JSON](data/input-readiness-v1.json), [CSV](data/input-readiness-v1.csv), [BibTeX](data/input-readiness-v1.bib) |
 | Face Swap Output Quality Scorecard v1 | A transparent human-review rubric for one output; not a biometric identity metric, provider ranking, or success-rate benchmark | [Protocol and local tool](https://deepswapai.com/face-swap-quality-scorecard) | [JSON](data/face-swap-output-scorecard-v1.json), [CSV](data/face-swap-output-scorecard-v1.csv), [BibTeX](data/face-swap-output-scorecard-v1.bib) |
+| Face Swap Evaluation Metric Decision Map v1 | Seven source-cited metric families with protocol prerequisites and interpretation limits; no metric was run and no provider was compared | [Decision map and primary sources](https://deepswapai.com/face-swap-quality-scorecard#automated-benchmark-map) | [JSON](data/face-swap-evaluation-metric-map-v1.json), [CSV](data/face-swap-evaluation-metric-map-v1.csv), [BibTeX](data/face-swap-evaluation-metric-map-v1.bib) |
 
 The catalog is available as [JSON-LD](catalog/research-catalog-v1.json) and
 [CSV](catalog/research-catalog-v1.csv). [datapackage.json](datapackage.json)
@@ -45,6 +47,7 @@ published release.
 - This is a first-party, publisher-controlled mirror, not an independent audit or endorsement.
 - The input-readiness benchmark does not measure final realism, identity accuracy, speed, or provider quality.
 - The output scorecard records visible human-review criteria and is not a face-recognition or biometric measurement.
+- The metric map explains protocol choices and limitations; it contains no product score, provider comparison, or benchmark result.
 - No customer uploads, account records, identity embeddings, generated customer media, or private production data are included.
 - Referenced sample images remain DeepSwapAI-owned and are not relicensed for unrelated reuse.
 
@@ -55,7 +58,7 @@ stated scope.
 
 Use [CITATION.cff](CITATION.cff), the dataset-specific BibTeX record, or cite:
 
-> DeepSwapAI Product Team (2026). *DeepSwapAI Face Swap Research Data Catalog* (Archive Version 1.0.1). <https://deepswapai.com/research#catalog>
+> DeepSwapAI Product Team (2026). *DeepSwapAI Face Swap Research Data Catalog* (Archive Version 1.1.0). <https://deepswapai.com/research#catalog>
 
 When using one dataset, cite its identifier, version, canonical landing page,
 and the artifact SHA-256 when exact reproduction matters.

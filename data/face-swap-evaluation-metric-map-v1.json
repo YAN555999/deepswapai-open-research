@@ -1,0 +1,223 @@
+{
+  "schemaVersion": "1.0",
+  "id": "deepswapai-face-swap-evaluation-metric-map-v1",
+  "identifier": "deepswapai-face-swap-evaluation-metric-map-v1",
+  "version": "1.0.0",
+  "title": "DeepSwapAI face swap evaluation metric decision map",
+  "alternateName": "Face swap benchmark metric selection matrix",
+  "description": "A source-cited decision map for selecting face swap identity, target-attribute, distribution, temporal, no-reference, or human-review evidence without combining incompatible protocols.",
+  "canonicalUrl": "https://deepswapai.com/face-swap-quality-scorecard#automated-benchmark-map",
+  "datePublished": "2026-07-22",
+  "dateModified": "2026-07-22",
+  "creator": "DeepSwapAI Product Team",
+  "isAccessibleForFree": true,
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "DeepSwapAI Face Swap Evaluation Metric Decision Map v1, https://deepswapai.com/face-swap-quality-scorecard#automated-benchmark-map",
+  "dataCatalogUrl": "https://deepswapai.com/research#catalog",
+  "citationFileUrl": "https://deepswapai.com/assets/evaluation-metrics/face-swap-evaluation-metric-map-v1.bib",
+  "scope": "A literature-grounded selection map describing what seven evaluation families compare, the protocol level they require, and the limits on interpreting their values.",
+  "evidenceBoundary": [
+    "This map does not run any metric, score any face swap output, or compare any provider.",
+    "A metric name does not make values portable across datasets, evaluators, crops, preprocessing, implementations, sample counts, or aggregation rules.",
+    "Identity, target-attribute preservation, distribution realism, temporal behavior, no-reference quality, and human review answer different questions.",
+    "Human review, consent, disclosure, and use-specific acceptance remain separate from an automated benchmark value."
+  ],
+  "protocolChecklist": [
+    "Name the source, target, output, reference set, or frame sequence compared by each measure.",
+    "Pin the dataset version, evaluator implementation and weights, crop, alignment, color pipeline, and preprocessing.",
+    "Report sample count, repeated runs, failed samples, aggregation, dispersion, and confidence intervals where applicable.",
+    "Keep identity transfer, target preservation, set-level realism, temporal behavior, and human acceptance as separately inspectable results."
+  ],
+  "metrics": [
+    {
+      "id": "identity-retrieval-similarity",
+      "name": "Identity retrieval or embedding similarity",
+      "category": "source-identity-transfer",
+      "mediaTypes": [
+        "photo",
+        "video",
+        "gif"
+      ],
+      "protocolLevel": "dataset",
+      "compares": "Source identity versus the swapped output, using a named face encoder or source gallery.",
+      "question": "How strongly does the output retain source-identity evidence under the fixed evaluator?",
+      "direction": "Higher similarity or retrieval performance is usually better inside the same protocol.",
+      "prerequisites": [
+        "Fixed source gallery",
+        "Named encoder and weights",
+        "Documented detection, alignment, crop, and aggregation"
+      ],
+      "boundary": "The encoder, crop, gallery, demographics, threshold, and preprocessing affect the value. It is not a biometric verdict for one person.",
+      "primarySources": [
+        "https://arxiv.org/abs/2605.00883"
+      ]
+    },
+    {
+      "id": "pose-expression-error",
+      "name": "Pose and expression error",
+      "category": "target-attribute-preservation",
+      "mediaTypes": [
+        "photo",
+        "video",
+        "gif"
+      ],
+      "protocolLevel": "dataset",
+      "compares": "Target pose or expression estimates versus the swapped output under a named estimator.",
+      "question": "How closely does the output preserve target head pose and expression under the fixed estimator?",
+      "direction": "Lower error is usually better inside the same estimator and parameterization.",
+      "prerequisites": [
+        "Fixed target-output pairs",
+        "Named pose or expression estimator",
+        "Documented parameter space, crop, and aggregation"
+      ],
+      "boundary": "Values are not portable across different estimators, crops, parameter spaces, landmark conventions, or preprocessing pipelines.",
+      "primarySources": [
+        "https://arxiv.org/abs/2605.00883"
+      ]
+    },
+    {
+      "id": "frechet-inception-distance",
+      "name": "Frechet Inception Distance (FID)",
+      "category": "set-level-distribution",
+      "mediaTypes": [
+        "photo",
+        "video-frame-set",
+        "gif-frame-set"
+      ],
+      "protocolLevel": "dataset",
+      "compares": "A distribution of generated images or frames versus a documented reference distribution.",
+      "question": "How close are two feature distributions under the fixed feature extractor and sampling protocol?",
+      "direction": "Lower is better only inside the same dataset, extractor, preprocessing, and sample protocol.",
+      "prerequisites": [
+        "Generated and reference image sets",
+        "Fixed feature extractor",
+        "Documented sample count, resize, color, and aggregation"
+      ],
+      "boundary": "One face swap output cannot have a defensible FID because a single image is not a distribution. FID does not isolate identity correctness.",
+      "primarySources": [
+        "https://arxiv.org/abs/1706.08500",
+        "https://arxiv.org/abs/2605.00883"
+      ]
+    },
+    {
+      "id": "subject-background-consistency",
+      "name": "Subject and background consistency",
+      "category": "temporal-consistency",
+      "mediaTypes": [
+        "video",
+        "gif"
+      ],
+      "protocolLevel": "sequence-dataset",
+      "compares": "Feature consistency across output frames and against preceding, target, or reference frames.",
+      "question": "How stable are subject and background features through motion under the fixed video protocol?",
+      "direction": "Higher consistency is usually better under the same implementation.",
+      "prerequisites": [
+        "Fixed frame sampling",
+        "Named feature extractor",
+        "Documented reference relationship and temporal aggregation"
+      ],
+      "boundary": "Consistency alone cannot establish correct identity mapping, visual realism, motion accuracy, or publication readiness.",
+      "primarySources": [
+        "https://arxiv.org/abs/2507.02691"
+      ]
+    },
+    {
+      "id": "fine-grained-video-synchronization",
+      "name": "Gaze, eye aperture, lip sync, and motion diagnostics",
+      "category": "fine-grained-video-behavior",
+      "mediaTypes": [
+        "video"
+      ],
+      "protocolLevel": "sequence-dataset",
+      "compares": "Named eye, audio-lip, landmark, or optical-flow behavior between target and output sequences.",
+      "question": "Which specific dynamic target attributes remain synchronized through the generated video?",
+      "direction": "Direction and unit depend on the named diagnostic; report each separately.",
+      "prerequisites": [
+        "Fixed frame and audio alignment",
+        "Named estimator and implementation",
+        "Documented units, missing-frame policy, and aggregation"
+      ],
+      "boundary": "These diagnostics are not interchangeable, need a documented video protocol, and do not apply to every media type.",
+      "primarySources": [
+        "https://arxiv.org/abs/2507.02691"
+      ]
+    },
+    {
+      "id": "learned-no-reference-assessment",
+      "name": "Learned no-reference quality assessment",
+      "category": "output-only-model-assessment",
+      "mediaTypes": [
+        "photo"
+      ],
+      "protocolLevel": "trained-model-plus-test-set",
+      "compares": "The output alone, evaluated by a model trained against ranked human judgments or labeled quality data.",
+      "question": "How does a trained assessor rank visible output quality when explicit reference media are unavailable?",
+      "direction": "Direction depends on the model output; validate it on a documented held-out distribution.",
+      "prerequisites": [
+        "Named model and weights",
+        "Documented training and test distributions",
+        "Fixed preprocessing and validation protocol"
+      ],
+      "boundary": "Performance depends on training data and validation scope. An output-only score cannot establish correct source identity transfer by itself.",
+      "primarySources": [
+        "https://arxiv.org/abs/2406.01884"
+      ]
+    },
+    {
+      "id": "structured-human-scorecard",
+      "name": "Structured human scorecard",
+      "category": "human-review",
+      "mediaTypes": [
+        "photo",
+        "video",
+        "gif"
+      ],
+      "protocolLevel": "single-output-or-study",
+      "compares": "One visible output against explicit defect anchors, publication gates, and reviewer notes.",
+      "question": "Which visible defects or unresolved use gates does a reviewer observe in this specific output?",
+      "direction": "Use anchored ordinal ratings; do not reinterpret the result as a probability or biometric score.",
+      "prerequisites": [
+        "Documented viewing conditions",
+        "Explicit scale anchors",
+        "Applicable criteria, reviewer notes, and unresolved gates"
+      ],
+      "boundary": "Subjective evidence about the reviewed sample, not model accuracy, provider ranking, probability, or biometric similarity.",
+      "primarySources": [
+        "https://www.itu.int/rec/R-REC-BT.500-15-202305-I",
+        "https://www.itu.int/rec/T-REC-P.910/en"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Towards High Fidelity Face Swapping: A Comprehensive Survey and New Benchmark",
+      "url": "https://arxiv.org/abs/2605.00883",
+      "relationship": "Defines the CASIA FaceSwapping benchmark and documents identity, target-attribute, distribution, and video consistency protocols."
+    },
+    {
+      "name": "CanonSwap: High-Fidelity and Consistent Video Face Swapping via Canonical Space Modulation",
+      "url": "https://arxiv.org/abs/2507.02691",
+      "relationship": "Reports video-specific identity, target-attribute, synchronization, temporal consistency, and distribution measures."
+    },
+    {
+      "name": "Rank-based No-reference Quality Assessment for Face Swapping",
+      "url": "https://arxiv.org/abs/2406.01884",
+      "relationship": "Studies learned output-only face-swap quality assessment trained against ranked judgments."
+    },
+    {
+      "name": "GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium",
+      "url": "https://arxiv.org/abs/1706.08500",
+      "relationship": "Introduces Frechet Inception Distance as a distribution-level evaluation measure."
+    },
+    {
+      "name": "ITU-R BT.500-15",
+      "url": "https://www.itu.int/rec/R-REC-BT.500-15-202305-I",
+      "relationship": "Primary standard for documented subjective image assessment methodology."
+    },
+    {
+      "name": "ITU-T P.910 (10/2023)",
+      "url": "https://www.itu.int/rec/T-REC-P.910/en",
+      "relationship": "Primary standard for documented subjective multimedia assessment methodology."
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "name": "deepswapai-face-swap-research-catalog",
   "title": "DeepSwapAI Face Swap Research Data Catalog",
   "id": "https://deepswapai.com/research#catalog",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "homepage": "https://deepswapai.com/research#catalog",
   "repository": "https://github.com/YAN555999/deepswapai-open-research",
   "created": "2026-07-22",
@@ -68,6 +68,33 @@
       "mediatype": "application/x-bibtex",
       "bytes": 389,
       "hash": "sha256:ff49328c015ecf5f43df1d1ddeaa47f27da463373280e023e92e39439767c6f9"
+    },
+    {
+      "name": "face-swap-evaluation-metric-map-v1",
+      "path": "data/face-swap-evaluation-metric-map-v1.json",
+      "profile": "data-resource",
+      "format": "json",
+      "mediatype": "application/json",
+      "bytes": 11144,
+      "hash": "sha256:57a39a3e657fc05f7dbe9acca98a32f84423fb7cecdd7046bed6dcbe2c42e394"
+    },
+    {
+      "name": "face-swap-evaluation-metric-map-v1",
+      "path": "data/face-swap-evaluation-metric-map-v1.csv",
+      "profile": "data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "bytes": 4881,
+      "hash": "sha256:e56729f2a8378c81c47b6cc3519d4d9c43481d1d77186fb28360f2b46697e722"
+    },
+    {
+      "name": "face-swap-evaluation-metric-map-v1",
+      "path": "data/face-swap-evaluation-metric-map-v1.bib",
+      "profile": "data-resource",
+      "format": "bib",
+      "mediatype": "application/x-bibtex",
+      "bytes": 417,
+      "hash": "sha256:9acf63032687e0a620ace86a73deeeb7c077e3670e5237faa581f6556915486c"
     }
   ]
 }

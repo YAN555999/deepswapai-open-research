@@ -8,7 +8,7 @@ const checkOnly = process.argv.includes('--check');
 const repository = 'https://github.com/YAN555999/deepswapai-open-research';
 const catalogId = 'https://deepswapai.com/research#catalog';
 const license = 'https://creativecommons.org/licenses/by/4.0/';
-const archiveVersion = '1.0.1';
+const archiveVersion = '1.1.0';
 
 const specs = [
   {
@@ -30,6 +30,16 @@ const specs = [
     csvUrl: 'https://deepswapai.com/assets/quality-scorecard/face-swap-output-scorecard-v1.csv',
     bibUrl: 'https://deepswapai.com/assets/quality-scorecard/face-swap-output-scorecard-v1.bib',
     evidenceBoundary: 'Structured human review of one output; not a biometric identity metric, provider ranking, or success-rate benchmark.',
+  },
+  {
+    json: 'data/face-swap-evaluation-metric-map-v1.json',
+    csv: 'data/face-swap-evaluation-metric-map-v1.csv',
+    bib: 'data/face-swap-evaluation-metric-map-v1.bib',
+    canonical: 'https://deepswapai.com/face-swap-quality-scorecard#automated-benchmark-map',
+    jsonUrl: 'https://deepswapai.com/assets/evaluation-metrics/face-swap-evaluation-metric-map-v1.json',
+    csvUrl: 'https://deepswapai.com/assets/evaluation-metrics/face-swap-evaluation-metric-map-v1.csv',
+    bibUrl: 'https://deepswapai.com/assets/evaluation-metrics/face-swap-evaluation-metric-map-v1.bib',
+    evidenceBoundary: 'Literature-grounded metric-selection map; no metric was run, no output was scored, and no provider was compared.',
   },
 ];
 
@@ -72,7 +82,7 @@ const catalog = {
   '@type': 'DataCatalog',
   '@id': catalogId,
   name: 'DeepSwapAI face swap research data catalog',
-  description: 'Versioned input-readiness measurements and a separate structured output-review protocol with explicit evidence boundaries.',
+  description: 'Versioned input-readiness measurements, a structured output-review protocol, and a literature-grounded evaluation metric map with explicit evidence boundaries.',
   url: catalogId,
   sameAs: repository,
   version: archiveVersion,
