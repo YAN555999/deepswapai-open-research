@@ -8,6 +8,8 @@ DeepSwapAI. This mirror provides stable machine-readable files, checksums,
 citation metadata, and a public correction history.
 
 - Canonical catalog: <https://deepswapai.com/research#catalog>
+- Canonical catalog JSON-LD: <https://deepswapai.com/research-catalog.json>
+- Canonical catalog CSV: <https://deepswapai.com/research-catalog.csv>
 - Input benchmark: <https://deepswapai.com/research>
 - Output review protocol: <https://deepswapai.com/face-swap-quality-scorecard>
 - Versioned release: <https://github.com/YAN555999/deepswapai-open-research/releases/tag/v1.0.1>
